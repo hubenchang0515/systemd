@@ -405,6 +405,7 @@ static int resolve_handler(sd_resolve_query *q, int ret, const struct addrinfo *
 
         c->resolve_query = sd_resolve_query_unref(c->resolve_query);
 
+        assert(ai);
         return connection_start(c, ai->ai_addr, ai->ai_addrlen);
 
 fail:
